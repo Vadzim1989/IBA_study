@@ -8,7 +8,11 @@ function getMinMax(aArray) {
         , max = Math.max(...aArray);
     const minIndex = aArray.indexOf(min)
         , maxIndex = aArray.indexOf(max)
-
-    return (isNaN(min) || isNaN(max)) || (!isFinite(min) || !isFinite(max)) ? {} : {Min: `${min} at index ${minIndex}`, max: `${max} at index ${maxIndex}`}
+    const minMax = {};
+    minMax[min] = minIndex;
+    minMax[max] = maxIndex;
+    
+    return (isNaN(min) || isNaN(max)) || (!isFinite(min) || !isFinite(max)) ? {} : minMax
 }
+
 
