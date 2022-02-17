@@ -7,7 +7,7 @@ function getMinMax(aArray) {
     const min = Math.min(...aArray)
         , max = Math.max(...aArray);
     const minIndex = aArray.indexOf(min)
-        , maxIndex = aArray.indexOf(max)
+        , maxIndex = aArray.indexOf(max);
     const minMax = {};
     minMax[min] = minIndex;
     minMax[max] = maxIndex;
