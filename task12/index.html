@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script>
+        mocha.setup('bdd');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        let assert = chai.assert;
+    </script>
+    <title>Task12</title>
+</head>
+<body>
+    <script>
+        /*
+        Написать программу для деления двух чисел.
+
+        Провести обработку ошибок в полной мере, все возможное ошибки описать простыми и понятными сообщениями (сообщения хранить в const объекте отдельно от функции), написать несколько unit тестов, которые будут показывать правильность работы программы
+        */
+        const ERROR_MESSAGE = {
+        null: 'Один из аргументов NULL',
+        nan: 'Один из агрументов БУКВА',
+        zero: 'Деление на ноль'
+        };
+
+        function divisionNumber(num1, num2) {
+        if(isNaN(num1) || isNaN(num2)) {
+            return ERROR_MESSAGE.nan;
+        } else if (num1 === null || num2 === null) {
+            return ERROR_MESSAGE.null;
+        } else if (num2 === 0) {
+            return ERROR_MESSAGE.zero
+        } else {
+            return num1/num2;
+        }
+        }
+    </script>
+
+    <!-- the script with tests (describe, it...) -->
+    <script src="test.js"></script>
+
+    <!-- the element with id="mocha" will contain test results -->
+    <div id="mocha"></div>
+
+    <!-- run tests! -->
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>
